@@ -6,6 +6,11 @@ from .models import User_info
 from django.http import HttpResponse
 
 
+from django.shortcuts import render
+
+def home(request):
+    return render(request, "signup.html")
+
 
 @csrf_exempt
 def signup(request):
