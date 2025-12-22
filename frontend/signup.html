@@ -2,13 +2,30 @@
 <html>
 <head>
     <title>Signup</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<input id="username" placeholder="Username">
-<input id="email" placeholder="Email">
-<input id="password" type="password" placeholder="Password">
-<button onclick="signup()">Signup</button>
+<div class="container">
+    <div class="card">
+        <h2>Signup Form</h2>
+
+        <label>Username</label>
+        <input id="username" placeholder="Enter username">
+
+        <label>Email</label>
+        <input id="email" placeholder="Enter email">
+
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Enter password">
+
+        <button onclick="signup()">Signup</button>
+
+        <p class="bottom-text">
+            Already a member? <a href="login.html">Login</a>
+        </p>
+    </div>
+</div>
 
 <script src="script.js"></script>
 </body>
