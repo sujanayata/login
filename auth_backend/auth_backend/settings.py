@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-gc9++hkzle=j9+_6ldd5=-zm$ket)jvae8(88vf9ess$owgyu4'
-
+SECRET_KEY =os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -78,18 +80,20 @@ WSGI_APPLICATION = 'auth_backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "login_db",
-        'USER':'root',
-        'PASSWORD':'sricharan@2002',
-        'HOST':'127.0.0.1',
-        'PORT':"3306",
-       
+        'NAME': os.getenv("DB_NAME"),
+        'USER':os.getenv("DB_USER"),
+        'PASSWORD':os.getenv("DB_PASSWORD"),
+        'HOST':os.getenv("DB_HOST"),
+        'PORT':os.getenv("DB_PORT"),
+        'OPTIONS':{'charset':'utf8mb4',
+                   'init_command':'SET sql_mode=STRICT_TRANS_TABLES'
+                   }
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
