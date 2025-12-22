@@ -3,6 +3,10 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import User_info
 
+from django.http import HttpResponse
+
+
+
 @csrf_exempt
 def signup(request):
     if request.method == "POST":
