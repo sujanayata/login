@@ -1,83 +1,100 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-/* Purple background */
 .container {
-    height: 100vh;
-    background: #8e2de2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100vh;
+  background: #8e2de2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* White card */
 .card {
-    width: 360px;
-    background: #fff;
-    padding: 30px;
-    border-radius: 6px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  width: 360px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
-/* Title */
 .card h2 {
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Labels */
-.card label {
-    font-size: 14px;
-    color: #333;
-    display: block;
-    margin-bottom: 6px;
+.message {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
 }
 
-/* Inputs */
-.card input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 18px;
-    border: 1px solid #aaa;
-    border-radius: 3px;
-    font-size: 14px;
+label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  display: block;
 }
 
-/* Gradient button */
-.card button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 25px;
-    font-size: 15px;
-    font-weight: bold;
-    color: white;
-    cursor: pointer;
-    background: linear-gradient(to right, red, orange, yellow);
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #aaa;
 }
 
-/* Hover */
-.card button:hover {
-    opacity: 0.9;
+.password-box {
+  position: relative;
 }
 
-/* Bottom text */
+.password-box span {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 14px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  color: white;
+  background: linear-gradient(to right, red, orange, yellow);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid white;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
 .bottom-text {
-    text-align: center;
-    margin-top: 18px;
-    font-size: 14px;
+  text-align: center;
+  margin-top: 15px;
 }
 
 .bottom-text a {
-    color: #00aaff;
-    text-decoration: none;
-}
-
-.bottom-text a:hover {
-    text-decoration: underline;
+  color: #0077ff;
+  text-decoration: none;
 }

@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Login</title>
-    <link rel="stylesheet" href="style.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="card">
-        <h2>Login Form</h2>
+  <div class="card">
+    <h2>Login</h2>
 
-        <label>Email</label>
-        <input id="email" placeholder="Enter email ">
+    <div class="message" id="message"></div>
 
-        <label>Password</label>
-        <input id="password" type="password" placeholder="Enter password">
+    <label>Email</label>
+    <input id="email" type="email" placeholder="Enter email">
 
-        <button onclick="login()">Login</button>
-
-        <p class="bottom-text">
-            Not a member? <a href="signup.html">Signup now</a>
-        </p>
+    <label>Password</label>
+    <div class="password-box">
+      <input id="password" type="password" placeholder="Enter password">
+      <span onclick="togglePassword()">👁</span>
     </div>
+
+    <button id="submitBtn" onclick="login()">Login</button>
+
+    <p class="bottom-text">
+      Don’t have an account? <a href="signup.html">Signup</a>
+    </p>
+  </div>
 </div>
 
 <script src="script.js"></script>
